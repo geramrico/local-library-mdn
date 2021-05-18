@@ -22,6 +22,13 @@ def index(request):
 
     num_potter = Book.objects.filter(title__icontains='potter').count()
 
+    #Part7
+    #Session example to tell user times in the home page.
+    num_visits = request.session.get('num_visits',1)
+    request.session['num_visits'] = num_visits + 1
+
+
+
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
@@ -29,6 +36,7 @@ def index(request):
         'num_authors': num_authors,
         'num_genres': num_genres,
         'num_potter': num_potter,
+        'num_visits': num_visits,
     }
 
     # Render the HTML template index.html with the data in the context variable
