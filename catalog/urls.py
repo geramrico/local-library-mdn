@@ -27,4 +27,5 @@ urlpatterns = [
 #Part8 - path pointing to "on loan" view
 urlpatterns += [
     path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+    path('all-loans/', views.AllLoansBooksViewForLibrarians.as_view(), name='all-loans'),
 ]
