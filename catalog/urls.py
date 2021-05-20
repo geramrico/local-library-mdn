@@ -23,3 +23,8 @@ urlpatterns = [
     #URL Map for author detail pages
     path('author/<int:pk>', views.AuthorDetailView.as_view(), name='author-detail'),
 ]
+
+#Part8 - path pointing to "on loan" view
+urlpatterns += [
+    path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+]

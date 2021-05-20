@@ -42,6 +42,9 @@ class BookAdmin(admin.ModelAdmin):
 
 @admin.register(BookInstance)   #same as "admin.site.register"
 class BookInstanceAdmin(admin.ModelAdmin):
+
+    list_display = ('book', 'status','borrower','due_back','id')
+
      #Agrega la opcion de filtrar para buscar
     list_filter = ('status','due_back') 
 
@@ -51,8 +54,6 @@ class BookInstanceAdmin(admin.ModelAdmin):
             'fields': ('book', 'imprint', 'id')
     }),
     ('Availability', {
-        'fields': ('status', 'due_back')
+        'fields': ('status', 'due_back','borrower')
     }),
     )
-
-    list_display = ('book', 'status','due_back','id')
