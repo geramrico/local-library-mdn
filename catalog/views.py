@@ -199,7 +199,7 @@ class BookUpdate(UpdateView):
     fields = '__all__' # Not recommended (potential security issue if more fields added)
     permission_required = 'catalog.can_mark_returned'
 
-@staff_member_required()
+
 class BookDelete(DeleteView):
     model = Book
     permission_required = 'catalog.can_mark_returned'
